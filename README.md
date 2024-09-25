@@ -1,2 +1,2 @@
 # BPAutomation
-Automation frameword for buyer portal
+Automation framework for buyer portal

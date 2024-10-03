@@ -7,7 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPageObj {
-
+	//Page objects for the login page
+	
 	public WebDriver driver;
 	public WebDriverWait wait;
 	
@@ -15,10 +16,9 @@ public class LoginPageObj {
 		this.driver = driver; 
 	}
 	
-	By emailField = By.id("signInName");
-	By passwordField = By.id("password");
-	By signInBtn = By.id("next");
-
+	By emailField = By.id("signInName"); //Locator for sign in field
+	By passwordField = By.id("password"); //Locator for password field
+	By signInBtn = By.id("next"); //Locator for Sign in button
 	
 	public WebElement getEmailField() {
 		wait = new WebDriverWait (driver,10);

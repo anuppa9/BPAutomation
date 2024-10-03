@@ -20,32 +20,37 @@ public class Base {
 	{
 		try {
 		prop= new Properties();
-		FileInputStream fls= new FileInputStream(System.getProperty("user.dir") +"/src/main/java/resources/data.properties");
+		FileInputStream fls= new FileInputStream(System.getProperty("user.dir") 
+				+"/src/main/java/resources/data.properties");
 		prop.load(fls);
 		} catch (IOException ex) {
 		    ex.printStackTrace();
 		}
 		
+		//Opens the specific browser from data.properties file
 		String browserName=prop.getProperty("browser");
 		
+		//To initialize the Chrome browser
 		if (browserName.equalsIgnoreCase("chrome")){
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}
+		//To initialize the Firefox browser
 		else if (browserName.equalsIgnoreCase("firefox")){
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
-		else {
-			WebDriverManager.edgedriver().setup();
+		//To initialize the Edge browser
+		else {WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
-		
+	
+	//To maximize the browser window
 	driver.manage().window().maximize();
 	return driver;
 }	
 	
-
+	//To close the browser
 	public void tearDown() {
 		
 	}
